@@ -58,29 +58,54 @@ const ServiceCard = ({ service, index = 0, variant = "default" }: ServiceCardPro
   }
 
   return (
-    <Link
-      to="/services"
-      className={cn(
-        "group block bg-card rounded-2xl p-6 md:p-8 shadow-custom-sm hover:shadow-custom-xl transition-all duration-300 border border-border/50 hover:border-accent/30 hover:-translate-y-1",
-        "opacity-0 animate-fade-up"
-      )}
-      style={{ animationDelay: `${index * 100}ms` }}
+  <Link
+    to="/services"
+    className={cn(
+      "group relative block rounded-2xl p-[2px] overflow-hidden",
+      "opacity-0 animate-fade-up"
+    )}
+    style={{ animationDelay: `${index * 100}ms` }}
+  >
+    {/* Animated Border */}
+    <span
+      className="
+        absolute inset-0
+        bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400
+        opacity-0 group-hover:opacity-100
+        transition-opacity duration-300
+        animate-border
+      "
+    />
+
+    {/* White Card */}
+    <div
+      className="
+        relative bg-card rounded-2xl
+        p-6 md:p-8
+        shadow-custom-sm group-hover:shadow-custom-xl
+        transition-all duration-300
+        hover:-translate-y-1
+        border border-border/50
+      "
     >
       <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent transition-all duration-300">
         <Icon size={24} className="text-accent group-hover:text-accent-foreground transition-colors duration-300" />
       </div>
+
       <h3 className="text-lg font-semibold text-foreground mb-2 group-hover:text-accent transition-colors duration-300">
         {service.title}
       </h3>
+
       <p className="text-sm text-muted-foreground leading-relaxed mb-4">
         {service.description}
       </p>
+
       <span className="inline-flex items-center gap-1 text-sm font-medium text-accent group-hover:gap-2 transition-all duration-200">
-        Learn more
-        <ArrowRight size={16} />
+        Learn more <ArrowRight size={16} />
       </span>
-    </Link>
-  );
-};
+    </div>
+  </Link>
+);
+
 
 export default ServiceCard;
