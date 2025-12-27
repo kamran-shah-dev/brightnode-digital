@@ -198,3 +198,18 @@
     transform: translateY(-10px);
   }
 }
+
+
+@keyframes borderSlide {
+  0% {
+    transform: translateX(-50%)
+  }
+  100% {
+    transform: translateX(50%);
+  }
+
+}
+
+.animate-border {
+  animation: borderSlide 6s linear infinite;
+}
