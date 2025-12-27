@@ -107,17 +107,7 @@ const Contact = () => {
                 </div>
               </div>
 
-              {/* Map Placeholder */}
-              <div className="relative rounded-2xl overflow-hidden aspect-video border border-border/50">
-                <iframe
-                  title="Quetta Location Map"
-                  src="https://www.google.com/maps?q=Quetta,+Pakistan&output=embed"
-                  className="w-full h-full border-0"
-                  loading="lazy"
-                ></iframe>
-
-                <div className="absolute inset-0 bg-black/10 pointer-events-none" />
-              </div>
+              
 
             </div>
 
@@ -131,6 +121,23 @@ const Contact = () => {
           </div>
         </div>
       </section>
+
+
+      <section className="section-padding">
+        <div className="px-[120px]">
+        <div className="relative rounded-2xl overflow-hidden aspect-video border border-border/50">
+          <iframe
+            title="Quetta Location Map"
+              src="https://www.google.com/maps?q=Quetta,+Pakistan&output=embed"
+              className="w-full h-full border-0"
+              loading="lazy"
+          ></iframe>
+
+          <div className="absolute inset-0 bg-black/10 pointer-events-none" />
+        </div>
+        </div>
+      </section>
+      
 
       {/* FAQ Teaser */}
       <section className="section-padding bg-secondary/30">

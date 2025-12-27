@@ -173,7 +173,7 @@ const Home = () => {
             </div>
 
             <div className="relative">
-              <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 md:p-12">
+              <div className="bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl p-8 md:p-12">
                 <div className="grid grid-cols-2 gap-6">
                   <div className="bg-card rounded-2xl p-6 text-center shadow-custom-md">
                     <div className="text-4xl md:text-5xl font-bold text-accent mb-2">

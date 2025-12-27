@@ -57,22 +57,22 @@ const Footer = () => {
             <h4 className="font-semibold text-lg">Contact Info</h4>
             <div className="space-y-3">
               <a
-                href="mailto:hello@brightnode.io"
+                href="mailto:hello@brightnode-digital.com"
                 className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200"
               >
                 <Mail size={16} />
-                hello@brightnode.io
+                hello@brightnode-digital.com
               </a>
               <a
                 href="tel:+1234567890"
                 className="flex items-center gap-3 text-sm text-primary-foreground/70 hover:text-accent transition-colors duration-200"
               >
                 <Phone size={16} />
-                +1 (234) 567-890
+                +192-XXXXXXXXXX
               </a>
               <div className="flex items-start gap-3 text-sm text-primary-foreground/70">
                 <MapPin size={16} className="mt-0.5 shrink-0" />
-                <span>123 Innovation Drive<br />Tech City, TC 12345</span>
+                <span>Brewry Road<br />Quetta 87300, BA, PK</span>
               </div>
             </div>
           </div>
