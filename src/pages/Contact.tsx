@@ -1,8 +1,13 @@
 import { Mail, Phone, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
+import {useState} from "react";
 
 const Contact = () => {
+
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
+
   return (
     <Layout
       title="Contact Us | BrightNode Digital Solutions"
@@ -51,7 +56,7 @@ const Contact = () => {
                       href="mailto:hello@brightnode.io"
                       className="text-muted-foreground hover:text-accent transition-colors"
                     >
-                      hello@brightnode.io
+                      hello@brightnode-digital.com
                     </a>
                   </div>
                 </div>
@@ -66,7 +71,7 @@ const Contact = () => {
                       href="tel:+1234567890"
                       className="text-muted-foreground hover:text-accent transition-colors"
                     >
-                      +1 (234) 567-890
+                      +92-XXXXXXXXXX
                     </a>
                   </div>
                 </div>
@@ -78,9 +83,9 @@ const Contact = () => {
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">Visit Us</h3>
                     <p className="text-muted-foreground">
-                      123 Innovation Drive
+                      Brewry Road
                       <br />
-                      Tech City, TC 12345
+                      Quetta 87500, BA, PK
                     </p>
                   </div>
                 </div>
@@ -103,14 +108,17 @@ const Contact = () => {
               </div>
 
               {/* Map Placeholder */}
-              <div className="bg-secondary/50 rounded-2xl aspect-video flex items-center justify-center border border-border/50">
-                <div className="text-center p-6">
-                  <MapPin size={40} className="text-muted-foreground/40 mx-auto mb-3" />
-                  <p className="text-sm text-muted-foreground">
-                    Interactive map will be displayed here
-                  </p>
-                </div>
+              <div className="relative rounded-2xl overflow-hidden aspect-video border border-border/50">
+                <iframe
+                  title="Quetta Location Map"
+                  src="https://www.google.com/maps?q=Quetta,+Pakistan&output=embed"
+                  className="w-full h-full border-0"
+                  loading="lazy"
+                ></iframe>
+
+                <div className="absolute inset-0 bg-black/10 pointer-events-none" />
               </div>
+
             </div>
 
             {/* Contact Form */}
@@ -135,7 +143,7 @@ const Contact = () => {
               Have questions? Here are some common ones we hear from clients.
             </p>
 
-            <div className="text-left space-y-6">
+            <div className="text-left space-y-3">
               {[
                 {
                   q: "What's your typical project timeline?",
@@ -149,16 +157,48 @@ const Contact = () => {
                   q: "What's included in the free consultation?",
                   a: "During the consultation, we'll discuss your project goals, provide initial recommendations, and give you a rough estimate of timeline and investment.",
                 },
-              ].map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-card rounded-xl p-6 shadow-custom-sm border border-border/50"
-                >
-                  <h3 className="font-semibold text-foreground mb-2">{faq.q}</h3>
-                  <p className="text-sm text-muted-foreground">{faq.a}</p>
-                </div>
-              ))}
+              ].map((faq, index) => {
+                const isOpen = openIndex === index;
+
+                return (
+                  <div
+                    key={index}
+                    className="bg-card rounded-xl border border-border/50 shadow-custom-sm overflow-hidden"
+                  >
+                    {/* Question */}
+                    <button
+                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                      className="w-full flex items-center justify-between p-4 text-left"
+                    >
+                      <h3 className="font-semibold text-foreground text-base md:text-lg">
+                        {faq.q}
+                      </h3>
+
+                      <span
+                        className={`ml-3 transition-transform duration-300 ${
+                          isOpen ? "rotate-180" : ""
+                        }`}
+                      >
+                        ▼
+                      </span>
+                    </button>
+
+                    {/* Answer */}
+                    <div
+                      className={`grid transition-all duration-300 ease-in-out ${
+                        isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                      }`}
+                    >
+                      <div className="overflow-hidden px-4 pb-4">
+                        <p className="text-base text-muted-foreground">{faq.a}</p>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
+
+
           </div>
         </div>
       </section>

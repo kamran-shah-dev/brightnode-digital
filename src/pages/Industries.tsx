@@ -2,6 +2,9 @@ import Layout from "@/components/Layout";
 import CTASection from "@/components/CTASection";
 import { industries } from "@/data/industries";
 
+
+
+
 const Industries = () => {
   return (
     <Layout
@@ -62,10 +65,20 @@ const Industries = () => {
                   <div
                     className={`${
                       isEven ? "order-2" : "order-2 lg:order-1"
-                    } bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-10 aspect-square flex items-center justify-center`}
+                    } relative overflow-hidden rounded-3xl aspect-square group`}
                   >
-                    <Icon size={120} className="text-accent/30" />
+                    {/* Image */}
+                    <img
+                      src={industry.image}
+                      alt={industry.name}
+                      loading="lazy"
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+
+                    {/* Overlay for readability + brand consistency */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-accent/25 to-primary/25" />
                   </div>
+
                 </article>
               );
             })}

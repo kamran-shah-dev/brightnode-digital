@@ -5,6 +5,7 @@ export interface Industry {
   name: string;
   description: string;
   icon: typeof ShoppingBag;
+  image: string
 }
 
 export const industries: Industry[] = [
@@ -12,31 +13,36 @@ export const industries: Industry[] = [
     id: "retail",
     name: "Retail",
     description: "E-commerce solutions and omnichannel experiences that drive sales and build customer loyalty in competitive retail markets.",
-    icon: ShoppingBag
+    icon: ShoppingBag,
+    image: "/industries/retail1.avif"
   },
   {
     id: "healthcare",
     name: "Healthcare",
     description: "HIPAA-compliant digital solutions for clinics, practitioners, and health organizations to better serve patients.",
-    icon: Heart
+    icon: Heart,
+    image: "/industries/healthcare.png"
   },
   {
     id: "education",
     name: "Education",
     description: "Learning management systems and educational platforms that make knowledge accessible and engaging.",
-    icon: GraduationCap
+    icon: GraduationCap,
+    image: "/industries/edu1.jpg"
   },
   {
     id: "local-business",
     name: "Local Businesses",
     description: "Professional web presence and local SEO strategies to help neighborhood businesses compete and thrive.",
-    icon: Store
+    icon: Store,
+    image: "/industries/loca_business.jpg"
   },
   {
     id: "startups",
     name: "Startups",
     description: "Agile development and scalable solutions for fast-moving startups looking to disrupt their industries.",
-    icon: Rocket
+    icon: Rocket,
+    image: "/industries/startup1.png"
   }
 ];
 
