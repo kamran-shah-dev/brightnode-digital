@@ -11,8 +11,12 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-xl">B</span>
+              <div className="w-14 h-14 rounded-lg overflow-hidden transition-transform duration-300 group-hover:scale-105">
+                <img
+                  src="/logo.png"
+                  alt="BrightNode Digital Solutions Logo"
+                  className="w-full h-full object-cover"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-bold text-lg leading-tight">BrightNode</span>
