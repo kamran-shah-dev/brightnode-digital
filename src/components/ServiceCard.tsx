@@ -61,19 +61,17 @@ const ServiceCard = ({ service, index = 0, variant = "default" }: ServiceCardPro
   <Link
     to="/services"
     className={cn(
-      "group relative block rounded-2xl p-[2px] overflow-hidden",
+      "group relative block rounded-2xl p-[2px]",
       "opacity-0 animate-fade-up"
     )}
     style={{ animationDelay: `${index * 100}ms` }}
   >
-    {/* Animated Border */}
-    <span
+    {/* Rotating Gradient Border */}
+    <div
       className="
-        absolute inset-0
-        bg-gradient-to-r from-teal-400 via-cyan-400 to-emerald-400
-        opacity-0 group-hover:opacity-100
-        transition-opacity duration-300
-        animate-border
+        absolute inset-0 rounded-2xl
+        bg-[conic-gradient(from_0deg,#22c55e,#06b6d4,#3b82f6,#22c55e)]
+        animate-spin-border
       "
     />
 
@@ -82,7 +80,7 @@ const ServiceCard = ({ service, index = 0, variant = "default" }: ServiceCardPro
       className="
         relative bg-card rounded-2xl
         p-6 md:p-8
-        shadow-custom-sm group-hover:shadow-custom-xl
+        shadow-custom-sm hover:shadow-custom-xl
         transition-all duration-300
         hover:-translate-y-1
         border border-border/50
@@ -107,5 +105,5 @@ const ServiceCard = ({ service, index = 0, variant = "default" }: ServiceCardPro
   </Link>
 );
 
-
+};
 export default ServiceCard;
