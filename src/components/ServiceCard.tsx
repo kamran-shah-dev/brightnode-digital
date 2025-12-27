@@ -57,19 +57,19 @@ const ServiceCard = ({ service, index = 0, variant = "default" }: ServiceCardPro
     );
   }
 
-  return (
+return (
   <Link
     to="/services"
     className={cn(
-      "group relative block rounded-2xl p-[2px]",
+      "group relative block h-full rounded-2xl p-[2px]",
       "opacity-0 animate-fade-up"
     )}
     style={{ animationDelay: `${index * 100}ms` }}
   >
-    {/* Rotating Gradient Border */}
+    {/* Animated Border */}
     <div
       className="
-        absolute inset-0 rounded-2xl
+        absolute inset-0 h-full rounded-2xl
         bg-[conic-gradient(from_0deg,#22c55e,#06b6d4,#3b82f6,#22c55e)]
         animate-spin-border
       "
@@ -78,12 +78,12 @@ const ServiceCard = ({ service, index = 0, variant = "default" }: ServiceCardPro
     {/* White Card */}
     <div
       className="
-        relative bg-card rounded-2xl
+        relative h-full bg-card rounded-2xl
         p-6 md:p-8
-        shadow-custom-sm hover:shadow-custom-xl
-        transition-all duration-300
-        hover:-translate-y-1
+        shadow-custom-sm group-hover:shadow-custom-xl
+        transition-shadow duration-300
         border border-border/50
+        flex flex-col
       "
     >
       <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent transition-all duration-300">
@@ -94,7 +94,7 @@ const ServiceCard = ({ service, index = 0, variant = "default" }: ServiceCardPro
         {service.title}
       </h3>
 
-      <p className="text-sm text-muted-foreground leading-relaxed mb-4">
+      <p className="text-sm text-muted-foreground leading-relaxed mb-4 flex-grow">
         {service.description}
       </p>
 
@@ -104,6 +104,7 @@ const ServiceCard = ({ service, index = 0, variant = "default" }: ServiceCardPro
     </div>
   </Link>
 );
+
 
 };
 export default ServiceCard;
