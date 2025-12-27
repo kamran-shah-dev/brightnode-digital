@@ -78,7 +78,7 @@ const About = () => {
                 </p>
               </div>
             </div>
-            <div className="bg-gradient-to-br from-accent/10 to-primary/10 rounded-3xl p-8 md:p-10">
+            <div className="bg-gradient-to-br from-accent/20 to-primary/20 rounded-3xl p-8 md:p-10">
               <div className="grid gap-6">
                 <div className="bg-card rounded-xl p-6 shadow-custom-sm">
                   <div className="flex items-center gap-4 mb-3">
@@ -120,7 +120,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="section-padding bg-secondary/30">
+      <section className="section-padding bg-secondary/30 bg-gradient-to-br from-accent/20 to-primary/20">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8">
             <div className="bg-card rounded-2xl p-8 md:p-10 shadow-custom-md border border-border/50">
