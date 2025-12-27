@@ -93,11 +93,40 @@ const Home = () => {
             {technologies.map((tech, index) => (
               <div
                 key={tech.name}
-                className="px-6 py-3 bg-card rounded-full border border-border shadow-custom-sm hover:shadow-custom-md hover:border-accent/30 transition-all duration-300 opacity-0 animate-fade-up"
+                className="
+                  group relative
+                  px-6 py-3
+                  bg-card
+                  rounded-full
+                  border border-border
+                  shadow-custom-sm
+                  transition-all duration-300
+                  hover:-translate-y-0.5 hover:scale-[1.03]
+                  hover:shadow-custom-md
+                  hover:border-accent/40
+                  opacity-0 animate-fade-up
+                "
                 style={{ animationDelay: `${index * 50}ms` }}
               >
-                <span className="font-medium text-foreground">{tech.name}</span>
+                {/* subtle glow on hover */}
+                <span
+                  className="
+                    absolute inset-0 rounded-full
+                    bg-gradient-to-r from-teal-400/20 via-cyan-400/20 to-blue-400/20
+                    opacity-0 group-hover:opacity-100
+                    blur-md
+                    transition-opacity duration-300
+                    -z-10
+                  "
+                />
+
+                {/* content */}
+                <span className="relative flex items-center font-semibold text-foreground tracking-tight">
+                  <span className="w-2 h-2 rounded-full bg-accent mr-2 opacity-70 group-hover:opacity-100 transition-opacity" />
+                  {tech.name}
+                </span>
               </div>
+
             ))}
           </div>
         </div>
