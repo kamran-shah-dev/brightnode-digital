@@ -71,7 +71,7 @@ const Contact = () => {
                       href="tel:+1234567890"
                       className="text-muted-foreground hover:text-accent transition-colors"
                     >
-                      +92-XXXXXXXXXX
+                      +92-3221645635
                     </a>
                   </div>
                 </div>
